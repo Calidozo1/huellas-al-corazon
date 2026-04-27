@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { useDataStore } from '../hooks/useDataStore';
-import { Users, PawPrint, Stethoscope, Plus, Trash2, Edit2 } from 'lucide-react';
-import { Client, Patient, Vet } from '../types';
+import { Users, PawPrint, Stethoscope, Trash2, Edit2 } from 'lucide-react';
+import { Client, Patient } from '../types';
 
 const DirectoryManager: React.FC = () => {
   const { 
     clients, saveClient, deleteClient,
     patients, savePatient, deletePatient,
-    vets, saveVet, deleteVet
+    vets
   } = useDataStore();
 
   const [activeTab, setActiveTab] = useState<'clients' | 'patients' | 'vets'>('clients');

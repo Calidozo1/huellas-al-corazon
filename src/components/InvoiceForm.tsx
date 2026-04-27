@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Invoice, LineItem, Client, Patient, Vet } from '../types';
+import React, { useState, useEffect } from 'react';
+import { Invoice, LineItem, Client, Patient } from '../types';
 import { PlusCircle, Trash2, User, PawPrint, Stethoscope, Search } from 'lucide-react';
 import { useDataStore } from '../hooks/useDataStore';
 
@@ -62,7 +62,7 @@ const InvoiceForm: React.FC<Props> = ({ invoice, setInvoice }) => {
        autoPat = clientPatients[0].id;
        autoPatSnap = { 
          name: clientPatients[0].name, species: clientPatients[0].species, breed: clientPatients[0].breed,
-         thirdPartyName: clientPatients[0].thirdPartyName, thirdPartyCedula: clientPatients[0].thirdPartyCedula 
+         thirdPartyName: clientPatients[0].thirdPartyName || '', thirdPartyCedula: clientPatients[0].thirdPartyCedula || '' 
        };
        patSearchStr = `${clientPatients[0].name} - ${clientPatients[0].species}`;
     }

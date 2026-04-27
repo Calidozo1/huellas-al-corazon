@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Client, Patient, Vet, Invoice } from '../types';
 
 // Changing storage keys to start fresh
